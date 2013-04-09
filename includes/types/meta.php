@@ -117,7 +117,7 @@ function meta_tinymce ( $args ) {
 	$label_format = $duplicate.
 		'<div class="input-bubble" style="width: 95%%; margin: 10px auto 10px auto; background-color: #F9F9F9; border: 1px solid #DFDFDF; -moz-border-radius: 5px; -webkit-border-radius: 5px; padding: 10px;">'.
 		'<p><label for="%1$s"><strong>%2$s</strong></label></p>'.
-		'<div class="customEditor"><textarea style="width: 80%%;" name="%1$s">%3$s</textarea></div>'.
+		'<div class="customEditor"><textarea style="width: 80%%;" name="%1$s">'.htmlspecialchars(apply_filters('the_content',$args[2])).'</textarea></div>'.
 		'<p><em>'.$description.'</em></p>'.
 		'</div>';
 	return vsprintf( $label_format, $args );
